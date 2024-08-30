@@ -9,6 +9,7 @@ function App() {
     const [convertedAmount,setConvertedAmount]=useState(0)
 
     const currencyInfo=useCurrencyInfo(from)
+   
 
     const options=Object.keys(currencyInfo)//jo json hai currency ka wo basically keys and values ke pair mei hai toh hume sirf keys chiye jaise: inr:50 toh hume sirf inr chiye issilye object.keys use kiya hai
 
@@ -46,7 +47,7 @@ function App() {
                                 label="From"
                                 amount={amount}
                                 currencyOptions={options}
-                                onCurrencyChange={(currency) => setAmount(amount)}
+                                onCurrencyChange={(currency) => setFrom(currency)}
                                 selectCurrency={from}
                                 onAmountChange={(amount) => setAmount(amount)}
                             />
@@ -66,7 +67,7 @@ function App() {
                                 amount={convertedAmount}
                                 currencyOptions={options}
                                 onCurrencyChange={(currency) => setTo(currency)}
-                                selectCurrency={from}
+                                selectCurrency={to}
                                 amountDisable
                             />
                         </div>
